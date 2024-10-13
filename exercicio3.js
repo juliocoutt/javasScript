@@ -54,10 +54,10 @@ console.log(`[nome_da_operacao] entre ${num1} e ${num2}`, fn(num1, num2))
     const MostraResultado = (num1,num2) => 
 
     {
-        console.log(`Resultado da soma entre ${num1} e ${num2} = `, Soma(num1, num2)) 
-        console.log(`Resultado da subtração entre ${num1} e ${num2} = `, Subtracao(num1, num2)) 
-        console.log(`Resultado da Multiplicação entre ${num1} e ${num2} = `, Multiplicacao(num1, num2)) 
-        console.log(`Resultado da Divisão entre ${num1} e ${num2} = `, Divisao(num1, num2))    
+        console.log(`Resultado da soma entre ${num1} e ${num2} = `, Soma(num1, num2)) ;
+        console.log(`Resultado da subtração entre ${num1} e ${num2} = `, Subtracao(num1, num2)) ;
+        console.log(`Resultado da Multiplicação entre ${num1} e ${num2} = `, Multiplicacao(num1, num2)) ;
+        console.log(`Resultado da Divisão entre ${num1} e ${num2} = `, Divisao(num1, num2)) ;
     
     }
 
