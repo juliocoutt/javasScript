@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('fundo3.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #a01682;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .task {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .task p {
+            margin: 0;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .task.completed p {
+            color: #888;
+            text-decoration: line-through;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista de Tarefas</h1>
+        <input type="text" id="taskInput" placeholder="Adicionar nova tarefa...">
+        <button onclick="addTask()">Adicionar</button>
+        <div id="taskList"></div>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por Júlio Couto</p>
+    </footer>
+
+    <script>
+        let tasks = [];
+
+        // Função para adicionar uma tarefa
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskDescription = taskInput.value.trim();
+
+            if (taskDescription !== "") {
+                const newTask = {
+                    descricao: taskDescription,
+                    status: false
+                };
+                tasks.push(newTask);
+                taskInput.value = ""; // Limpar o campo de entrada
+                renderTasks();
+            }
+        }
+
+        // Função para renderizar as tarefas
+        function renderTasks() {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = ""; // Limpar a lista de tarefas
+
+            tasks.forEach((task, index) => {
+                const taskDiv = document.createElement("div");
+                taskDiv.classList.add("task");
+                if (task.status) taskDiv.classList.add("completed");
+
+                const taskText = document.createElement("p");
+                taskText.innerText = task.descricao;
+
+                const taskCheckbox = document.createElement("input");
+                taskCheckbox.type = "checkbox";
+                taskCheckbox.checked = task.status;
+                taskCheckbox.onclick = () => toggleTaskStatus(index);
+
+                taskDiv.appendChild(taskCheckbox);
+                taskDiv.appendChild(taskText);
+                taskList.appendChild(taskDiv);
+            });
+        }
+
+        // Função para alternar o status de uma tarefa
+        function toggleTaskStatus(index) {
+            tasks[index].status = !tasks[index].status;
+            renderTasks();
+        }
+    </script>
+
+</body>
+</html>
+
