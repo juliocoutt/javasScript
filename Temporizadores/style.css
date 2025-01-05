@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('imagem.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+#temporizador {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#temporizador div {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.951);
+    border-radius: 5px;
+}
+
+#dias, #horas, #minutos, #segundos {
+    font-size: 36px;
+}
