@@ -1,0 +1,63 @@
+/* Resetando o estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do body */
+body {
+    font-family: sans-serif;
+    background-image: url('fundo.png'); /* Caminho para sua imagem */
+    background-size: cover; /* A imagem cobrirá toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Fixa a imagem ao fundo durante o scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Centralizando o conteúdo */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.914); /* Fundo semi-transparente para o conteúdo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Estilo para o título */
+h1 {
+    color: #f02929;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o input e button */
+input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Estilo para o botão */
+button {
+    background-color: hsl(240, 60%, 48%);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:  hsl(240, 60%, 48%);;
+}
+
+/* Estilo para a lista de curtidas */
+#listaCurtidas {
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
